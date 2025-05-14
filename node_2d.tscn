@@ -3,16 +3,29 @@
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://bbbvodg33g4qc" path="res://icon.svg" id="1_wtcfe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(100, 87.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(100, 87.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(126.837, 124.515)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-4, 3)
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(716.25, 468)
+scale = Vector2(2.12109, 1.42969)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(716, 468)
+scale = Vector2(2.12109, 1.42969)
+shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(-4, 3)
@@ -26,18 +39,6 @@ texture = ExtResource("1_wtcfe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
 position = Vector2(247, 217.25)
 shape = SubResource("RectangleShape2D_epypp")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="CharacterBody2D2"]
-
-[node name="Sprite2D3" type="Sprite2D" parent="CharacterBody2D2/StaticBody2D"]
-position = Vector2(716.25, 468)
-scale = Vector2(2.12109, 1.42969)
-texture = ExtResource("1_wtcfe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/StaticBody2D"]
-position = Vector2(716, 468)
-scale = Vector2(2.12109, 1.42969)
-shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
