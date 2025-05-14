@@ -8,5 +8,5 @@
 position = Vector2(-4, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
-position = Vector2(861, 242)
+position = Vector2(668, -83)
 texture = ExtResource("1_wtcfe")
