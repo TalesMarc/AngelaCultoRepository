@@ -8,6 +8,6 @@
 position = Vector2(-4, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
-position = Vector2(591, 73)
-scale = Vector2(4.66406, 1)
+position = Vector2(274, 308)
+scale = Vector2(0.61328, 3.15625)
 texture = ExtResource("1_wtcfe")
