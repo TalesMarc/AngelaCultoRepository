@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d223qq1ic4353"]
+
+[ext_resource type="Texture2D" uid="uid://c05me443cmgxi" path="res://sprite_0.png" id="1_dit3g"]
+[ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="2_ueh0k"]
+[ext_resource type="Script" uid="uid://bhafs30unjsfw" path="res://inicio.gd" id="3_xisgc"]
+
+[node name="Configuracoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="voltar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 506.0
+offset_right = 590.0
+offset_bottom = 656.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_dit3g")
+texture_hover = ExtResource("2_ueh0k")
+script = ExtResource("3_xisgc")
+
+[node name="Label" type="Label" parent="voltar"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 10.0
+offset_right = 366.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 84
+text = "Back"
+
+[connection signal="pressed" from="voltar" to="voltar" method="voltar_on_pressed"]
