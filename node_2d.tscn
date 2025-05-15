@@ -13,17 +13,18 @@ size = Vector2(100, 87.5)
 size = Vector2(126.837, 124.515)
 
 [node name="Node2D" type="Node2D"]
+rotation = -0.00991185
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-4, 3)
 
 [node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(716.25, 468)
+position = Vector2(651.359, 468.44)
 scale = Vector2(2.12109, 1.42969)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(716, 468)
+position = Vector2(654.379, 466.469)
 scale = Vector2(2.12109, 1.42969)
 shape = SubResource("RectangleShape2D_0hol4")
 
@@ -40,14 +41,97 @@ texture = ExtResource("1_wtcfe")
 position = Vector2(247, 217.25)
 shape = SubResource("RectangleShape2D_epypp")
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+offset = Vector2(600, 600)
+zoom = Vector2(0.5, 0.5)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-124.083, 7.77051)
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(259, 453)
+position = Vector2(357.522, 453.566)
 scale = Vector2(2.10938, 1.38477)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(259.227, 452.788)
+position = Vector2(355.542, 451.546)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(204.079, -6.97757)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(834.766, 431.295)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(829.747, 433.245)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StaticBody2D3"]
+position = Vector2(-0.970216, -3.00976)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D3/StaticBody2D"]
+position = Vector2(808.434, 162.021)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/StaticBody2D"]
+position = Vector2(808.444, 161.021)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-528.182, 15.7656)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(357.522, 453.566)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(355.542, 451.546)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(1392.67, -60.1993)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(357.522, 453.566)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(355.542, 451.546)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(1066.75, -70.4302)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D6"]
+position = Vector2(357.522, 453.566)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(355.542, 451.546)
+scale = Vector2(2.10938, 1.38477)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(100.573, -360.021)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D7"]
+position = Vector2(357.522, 453.566)
+scale = Vector2(2.10938, 1.38477)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(355.542, 451.546)
 scale = Vector2(2.10938, 1.38477)
 shape = SubResource("RectangleShape2D_q6r6c")

@@ -73,3 +73,4 @@ text = "Play"
 
 [connection signal="pressed" from="sair_button" to="sair_button" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

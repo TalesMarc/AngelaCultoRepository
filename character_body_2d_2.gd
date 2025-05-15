@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 3000.0
+const JUMP_VELOCITY = -900.0
 var respawn_position = Vector2(100, 100)  # Posição onde o jogador vai reaparecer
 
 func _physics_process(delta: float) -> void:
