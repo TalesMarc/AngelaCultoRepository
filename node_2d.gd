@@ -43,4 +43,4 @@ func _on_texture_button_3_pressed() -> void:
 
 
 func _on_texture_button_pressed666() -> void:
-	pass # Replace with function body.
+	pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
