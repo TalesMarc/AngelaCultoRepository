@@ -35,7 +35,7 @@
 size = Vector2(128.236, 125.902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
-size = Vector2(455.693, 53.1333)
+size = Vector2(801.84, 53.1333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7plk7"]
 animations = [{
@@ -169,6 +169,12 @@ position = Vector2(732.574, 349.278)
 sprite_frames = SubResource("SpriteFrames_7plk7")
 frame_progress = 0.0539517
 script = ExtResource("14_2u7jv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(296.815, 171.955)
+rotation = 3.14159
+scale = Vector2(0.0835413, -1.04068)
+shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(-4, 3)
