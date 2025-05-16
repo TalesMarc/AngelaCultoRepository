@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://drcrwrkjk1fby"]
+[gd_scene load_steps=21 format=3 uid="uid://drcrwrkjk1fby"]
 
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://bbbvodg33g4qc" path="res://icon.svg" id="1_wtcfe"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c8wj31mir2h8s" path="res://gay do jorge parado - cópia/sprite_4.png" id="13_bjha6"]
 [ext_resource type="Texture2D" uid="uid://g3hkhsfcyndp" path="res://gay do jorge parado - cópia/sprite_5.png" id="14_gt76g"]
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="15_d2bti"]
+[ext_resource type="Texture2D" uid="uid://c05me443cmgxi" path="res://sprite_5.png" id="16_ta5nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
@@ -212,10 +213,51 @@ scale = Vector2(2.10938, 1.38477)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
-offset_left = 243.0
-offset_top = -78.0
-offset_right = 850.0
-offset_bottom = 585.0
+offset_left = 354.0
+offset_top = -138.0
+offset_right = 961.0
+offset_bottom = 525.0
+
+[node name="TextureButton" type="TextureButton" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_ta5nu")
+texture_hover = ExtResource("15_d2bti")
+
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 12.0
+offset_right = 404.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 84
+text = "resume"
+
+[node name="TextureButton2" type="TextureButton" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_ta5nu")
+texture_hover = ExtResource("15_d2bti")
+
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton2"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 396.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 84
+text = "Settings"
+
+[node name="TextureButton3" type="TextureButton" parent="PauseMenu/PanelContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_ta5nu")
+texture_hover = ExtResource("15_d2bti")
+
+[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton3"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 11.0
+offset_right = 328.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 84
+text = "Sair"
