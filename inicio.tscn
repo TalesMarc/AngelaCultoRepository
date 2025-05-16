@@ -18,8 +18,8 @@ script = ExtResource("1_yogrx")
 layout_mode = 0
 offset_left = 436.0
 offset_top = 502.0
-offset_right = 936.0
-offset_bottom = 652.0
+offset_right = 836.0
+offset_bottom = 630.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_htw3k")
 texture_hover = ExtResource("3_x8a4r")
@@ -27,10 +27,11 @@ script = ExtResource("1_yogrx")
 
 [node name="Label" type="Label" parent="sair_button"]
 layout_mode = 0
-offset_left = 102.0
-offset_top = -2.0
-offset_right = 316.0
-offset_bottom = 144.0
+offset_left = 132.857
+offset_top = 18.5714
+offset_right = 308.857
+offset_bottom = 133.571
+scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Quit"
 
@@ -38,17 +39,19 @@ text = "Quit"
 layout_mode = 0
 offset_left = 436.0
 offset_top = 380.0
-offset_right = 936.0
-offset_bottom = 530.0
+offset_right = 836.0
+offset_bottom = 508.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_htw3k")
 texture_hover = ExtResource("3_7e6sy")
 
 [node name="Label" type="Label" parent="TextureButton2"]
 layout_mode = 0
-offset_left = 34.0
-offset_right = 354.0
-offset_bottom = 146.0
+offset_left = 74.2857
+offset_top = 21.4286
+offset_right = 394.286
+offset_bottom = 136.429
+scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Options"
 
@@ -56,18 +59,19 @@ text = "Options"
 layout_mode = 0
 offset_left = 436.0
 offset_top = 258.0
-offset_right = 936.0
-offset_bottom = 408.0
+offset_right = 836.0
+offset_bottom = 386.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_htw3k")
 texture_hover = ExtResource("3_7e6sy")
 
 [node name="Label" type="Label" parent="TextureButton3"]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 8.0
-offset_right = 281.0
-offset_bottom = 123.0
+offset_left = 135.714
+offset_top = 20.0
+offset_right = 304.714
+offset_bottom = 135.0
+scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Play"
 
