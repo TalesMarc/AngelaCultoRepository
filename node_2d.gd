@@ -36,3 +36,7 @@ func _on_main_menu_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_texture_button_3_pressed() -> void:
+	pass # Replace with function body.
