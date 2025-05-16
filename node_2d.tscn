@@ -213,12 +213,13 @@ scale = Vector2(2.10938, 1.38477)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
-offset_left = 354.0
-offset_top = -138.0
-offset_right = 961.0
-offset_bottom = 525.0
+offset_left = 431.0
+offset_top = 136.0
+offset_right = 1038.0
+offset_bottom = 799.0
 
 [node name="TextureButton" type="TextureButton" parent="PauseMenu/PanelContainer"]
 layout_mode = 2
