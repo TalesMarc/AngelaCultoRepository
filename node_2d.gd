@@ -43,4 +43,4 @@ func _on_texture_button_3_pressed() -> void:
 
 
 func _on_texture_button_pressed666() -> void:
-	pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pause_menu.visible = not pause_menu.visible
