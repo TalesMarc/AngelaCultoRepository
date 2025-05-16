@@ -40,3 +40,7 @@ func _on_quit_button_pressed():
 
 func _on_texture_button_3_pressed() -> void:
 	get_tree().change_scene_to_file("res://inicio.tscn")
+
+
+func _on_texture_button_pressed666() -> void:
+	pass # Replace with function body.
