@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d223qq1ic4353"]
 
-[ext_resource type="Texture2D" path="res://sprite_5.png" id="1_dit3g"]
+[ext_resource type="Texture2D" uid="uid://d0aj3qvixbbyp" path="res://botao5.png" id="1_dit3g"]
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="2_ueh0k"]
 [ext_resource type="Script" uid="uid://bhafs30unjsfw" path="res://inicio.gd" id="3_xisgc"]
 
@@ -14,21 +14,22 @@ grow_vertical = 2
 
 [node name="voltar" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 506.0
-offset_right = 590.0
-offset_bottom = 656.0
-scale = Vector2(0.5, 0.5)
+offset_left = 416.0
+offset_top = 491.0
+offset_right = 816.0
+offset_bottom = 619.0
+scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("1_dit3g")
 texture_hover = ExtResource("2_ueh0k")
 script = ExtResource("3_xisgc")
 
 [node name="Label" type="Label" parent="voltar"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 10.0
-offset_right = 366.0
-offset_bottom = 156.0
+offset_left = 121.25
+offset_top = 21.25
+offset_right = 335.25
+offset_bottom = 136.25
+scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Back"
 
