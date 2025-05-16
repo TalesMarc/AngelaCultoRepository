@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://g3hkhsfcyndp" path="res://gay do jorge parado - cópia/sprite_5.png" id="14_gt76g"]
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="15_d2bti"]
 [ext_resource type="Texture2D" uid="uid://dnxochah5b24j" path="res://sprite_0 3.png" id="16_k73cj"]
-[ext_resource type="Texture2D" path="res://sprite_5.png" id="16_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://d0aj3qvixbbyp" path="res://botao5.png" id="17_k73cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
@@ -235,43 +235,43 @@ scale = Vector2(0.600001, 0.619565)
 
 [node name="TextureButton" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("16_ta5nu")
+texture_normal = ExtResource("17_k73cj")
 texture_hover = ExtResource("15_d2bti")
 
 [node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 46.0
-offset_right = 408.0
-offset_bottom = 192.0
+offset_left = 56.6664
+offset_top = 4.84212
+offset_right = 364.666
+offset_bottom = 150.842
 theme_override_font_sizes/font_size = 84
 text = "resume"
 
 [node name="TextureButton2" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("16_ta5nu")
+texture_normal = ExtResource("17_k73cj")
 texture_hover = ExtResource("15_d2bti")
 
 [node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton2"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 8.0
-offset_right = 396.0
-offset_bottom = 154.0
+offset_left = 44.9998
+offset_top = 8.42109
+offset_right = 370.0
+offset_bottom = 154.421
 theme_override_font_sizes/font_size = 84
 text = "Settings"
 
 [node name="TextureButton3" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
-texture_normal = ExtResource("16_ta5nu")
+texture_normal = ExtResource("17_k73cj")
 texture_hover = ExtResource("15_d2bti")
 
 [node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton3"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 11.0
-offset_right = 328.0
-offset_bottom = 157.0
+offset_left = 130.0
+offset_top = 10.3861
+offset_right = 288.0
+offset_bottom = 156.386
 theme_override_font_sizes/font_size = 84
 text = "Sair"
 
