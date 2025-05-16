@@ -1,11 +1,21 @@
-extends Node2D
+extends Node2D  # ou Control, dependendo de onde você estiver
 
+@onready var pause_menu = $PauseMenu
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _input(event):
+	if event.is_action_pressed("Menu_Game"):
+		toggle_pause()
 
+func toggle_pause():
+	get_tree().paused = not get_tree().paused
+	pause_menu.visible = get_tree().paused
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_resume_button_pressed():
+	toggle_pause()
+
+func _on_main_menu_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://inicio.tscn")
+
+func _on_quit_button_pressed():
+	get_tree().quit()
