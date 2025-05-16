@@ -1,31 +1,31 @@
-extends Node2D  # Ou Control, dependendo do seu nó principal
+extends Node2D  # ou Control, dependendo de onde você estiver
 
 @onready var pause_menu = $PauseMenu
 
 func _ready():
-	# Permite que esse nó receba inputs mesmo quando o jogo está pausado
-	pause_mode = Node.PAUSE_MODE_PROCESS
-	
-	# Garante que o menu começa invisível
-	pause_menu.visible = false
+	process_mode = Node.ProcessModeEnum.PROCESS
+	pause_menu.visible = false  # Começa invisível
 
 func _input(event):
-	if event.is_action_pressed("Menu_Game"):  # Sua ação configurada para ESC
+	if event.is_action_pressed("Menu_Game"):
 		toggle_pause()
 
 func toggle_pause():
-	var is_paused = get_tree().paused
-	get_tree().paused = not is_paused
-	pause_menu.visible = not is_paused
-
-# Botões do menu de pausa — conecte os sinais 'pressed' deles para esses métodos
+	if get_tree().paused:
+		# Se já está pausado, despausa e esconde menu
+		get_tree().paused = false
+		pause_menu.visible = false
+	else:
+		# Se não está pausado, pausa e mostra menu
+		get_tree().paused = true
+		pause_menu.visible = true
 
 func _on_resume_button_pressed():
 	toggle_pause()
 
 func _on_main_menu_button_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://inicio.tscn")  # Troque para sua cena principal
+	get_tree().change_scene_to_file("res://inicio.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
