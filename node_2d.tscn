@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://drcrwrkjk1fby"]
+[gd_scene load_steps=23 format=3 uid="uid://drcrwrkjk1fby"]
 
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://btbt3p4i64hrd" path="res://node_2d.gd" id="1_flf07"]
@@ -16,7 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c8wj31mir2h8s" path="res://gay do jorge parado - cópia/sprite_4.png" id="13_bjha6"]
 [ext_resource type="Texture2D" uid="uid://g3hkhsfcyndp" path="res://gay do jorge parado - cópia/sprite_5.png" id="14_gt76g"]
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="15_d2bti"]
-[ext_resource type="Texture2D" uid="uid://c05me443cmgxi" path="res://sprite_5.png" id="16_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://dnxochah5b24j" path="res://sprite_0 3.png" id="16_k73cj"]
+[ext_resource type="Texture2D" path="res://sprite_5.png" id="16_ta5nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
@@ -74,7 +75,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_d2bti")
+"texture": ExtResource("16_k73cj")
 }],
 "loop": true,
 "name": &"Parado",
