@@ -1,32 +1,25 @@
 extends Node2D # Ou Control, dependendo do nó principal da sua cena de jogo
 
-@onready var pause_menu = $CanvasLayer/PauseMenu # Ajuste o caminho SE necessário
-var is_paused = false
+@onready var options_menu = $OptionsMenu # Assumindo que seu menu de opções se chama "OptionsMenu"
 
 func _ready():
-	if is_instance_valid(pause_menu):
-		pause_menu.visible = false
+	# Certifica-se de que o menu de opções esteja inicialmente invisível
+	if is_instance_valid(options_menu):
+		options_menu.visible = false
 
 func _input(event):
-	if event.is_action_pressed("Menu_Game"):
-		toggle_pause()
+	if event.is_action_pressed("Menu_Game"): # Mantemos a mesma ação para o Esc
+		toggle_options_menu()
 
-func toggle_pause():
-	is_paused = not is_paused
-	get_tree().paused = is_paused
-	if is_instance_valid(pause_menu):
-		pause_menu.visible = is_paused
-		# Se houver um nó Control dentro do seu CanvasLayer que deve receber o foco:
-		# var algum_control = pause_menu.get_node("NomeDoControl")
-		# if is_instance_valid(algum_control) and algum_control is Control:
-		# 	if is_paused:
-		# 		algum_control.grab_focus()
+func toggle_options_menu():
+	if is_instance_valid(options_menu):
+		options_menu.visible = not options_menu.visible
 
 func _on_resume_button_pressed():
-	toggle_pause()
+	toggle_options_menu() # Fecha o menu de opções (se você tiver um botão de "Voltar")
 
 func _on_main_menu_button_pressed():
-	get_tree().paused = false
+	# Aqui você colocaria a lógica para ir para o menu principal
 	get_tree().change_scene_to_file("res://inicio.tscn")
 
 func _on_quit_button_pressed():
