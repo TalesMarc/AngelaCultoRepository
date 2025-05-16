@@ -217,34 +217,40 @@ scale = Vector2(2.10938, 1.38477)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-visible = false
 
-[node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
-offset_left = 431.0
-offset_top = 136.0
-offset_right = 1038.0
-offset_bottom = 799.0
+[node name="GridContainer" type="GridContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -304.0
+offset_right = 100.0
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="PauseMenu/PanelContainer"]
+[node name="TextureButton" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("16_ta5nu")
 texture_hover = ExtResource("15_d2bti")
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton"]
+[node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton"]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 12.0
-offset_right = 404.0
-offset_bottom = 158.0
+offset_left = 100.0
+offset_top = 46.0
+offset_right = 408.0
+offset_bottom = 192.0
 theme_override_font_sizes/font_size = 84
 text = "resume"
 
-[node name="TextureButton2" type="TextureButton" parent="PauseMenu/PanelContainer"]
+[node name="TextureButton2" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("16_ta5nu")
 texture_hover = ExtResource("15_d2bti")
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton2"]
+[node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton2"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 8.0
@@ -253,12 +259,12 @@ offset_bottom = 154.0
 theme_override_font_sizes/font_size = 84
 text = "Settings"
 
-[node name="TextureButton3" type="TextureButton" parent="PauseMenu/PanelContainer"]
+[node name="TextureButton3" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("16_ta5nu")
 texture_hover = ExtResource("15_d2bti")
 
-[node name="Label" type="Label" parent="PauseMenu/PanelContainer/TextureButton3"]
+[node name="Label" type="Label" parent="PauseMenu/GridContainer/TextureButton3"]
 layout_mode = 0
 offset_left = 170.0
 offset_top = 11.0
