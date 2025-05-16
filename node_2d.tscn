@@ -20,7 +20,7 @@
 size = Vector2(128.236, 125.902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(100, 136.854)
+size = Vector2(63.9275, 136.854)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2hxjc"]
 animations = [{
@@ -103,7 +103,7 @@ position = Vector2(-4, 3)
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(-4.10866, 32.5974)
+position = Vector2(-2.39122, 32.5974)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
@@ -210,3 +210,12 @@ texture = ExtResource("1_wtcfe")
 position = Vector2(355.542, 451.546)
 scale = Vector2(2.10938, 1.38477)
 shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu"]
+offset_left = 243.0
+offset_top = -78.0
+offset_right = 850.0
+offset_bottom = 585.0
