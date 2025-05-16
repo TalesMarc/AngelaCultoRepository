@@ -1,13 +1,83 @@
-[gd_scene load_steps=6 format=3 uid="uid://drcrwrkjk1fby"]
+[gd_scene load_steps=20 format=3 uid="uid://drcrwrkjk1fby"]
 
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://bbbvodg33g4qc" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://el222y71w3oc" path="res://gay do jorge parado/sprite_0.png" id="3_d2bti"]
+[ext_resource type="Texture2D" uid="uid://bllci3vgj6fhv" path="res://gay do jorge parado/sprite_1.png" id="4_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://b17xyj33xk78i" path="res://gay do jorge parado/sprite_2.png" id="5_flf07"]
+[ext_resource type="Texture2D" uid="uid://d0klfdunf25mh" path="res://gay do jorge parado/sprite_3.png" id="6_k73cj"]
+[ext_resource type="Texture2D" uid="uid://d01cl0bwm2f0x" path="res://gay do jorge parado/sprite_4.png" id="7_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://dhkwsapn1oe4w" path="res://gay do jorge parado/sprite_5.png" id="8_fs4d3"]
+[ext_resource type="Texture2D" uid="uid://bq0h5e2vh2h7s" path="res://gay do jorge parado - cópia/sprite_0.png" id="9_7vxoj"]
+[ext_resource type="Texture2D" uid="uid://byeunknbxoslg" path="res://gay do jorge parado - cópia/sprite_1.png" id="10_ei405"]
+[ext_resource type="Texture2D" uid="uid://cbmjpn82jeppm" path="res://gay do jorge parado - cópia/sprite_2.png" id="11_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://ds0phrachgj4b" path="res://gay do jorge parado - cópia/sprite_3.png" id="12_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://c8wj31mir2h8s" path="res://gay do jorge parado - cópia/sprite_4.png" id="13_bjha6"]
+[ext_resource type="Texture2D" uid="uid://g3hkhsfcyndp" path="res://gay do jorge parado - cópia/sprite_5.png" id="14_gt76g"]
+[ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="15_d2bti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(100, 87.5)
+size = Vector2(100, 136.854)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hxjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_d2bti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_flf07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k73cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rjqkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fs4d3")
+}],
+"loop": true,
+"name": &"Direita",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_7vxoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ei405")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e8dv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2nhjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bjha6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gt76g")
+}],
+"loop": true,
+"name": &"Esquerda",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_d2bti")
+}],
+"loop": true,
+"name": &"Parado",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(126.837, 124.515)
@@ -32,18 +102,23 @@ shape = SubResource("RectangleShape2D_0hol4")
 position = Vector2(-4, 3)
 script = ExtResource("1_0e48y")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
-position = Vector2(246, 217)
-scale = Vector2(0.785402, 0.67383)
-texture = ExtResource("1_wtcfe")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(247, 217.25)
+position = Vector2(-4.10866, 32.5974)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
-offset = Vector2(600, 600)
+offset = Vector2(300, 300)
 zoom = Vector2(0.5, 0.5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.19
+drag_vertical_offset = 0.21
+drag_right_margin = 0.4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+sprite_frames = SubResource("SpriteFrames_2hxjc")
+animation = &"Parado"
+frame_progress = 0.573919
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-124.083, 7.77051)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2d0wgeex7kd1"]
+
+[ext_resource type="Texture2D" uid="uid://c05me443cmgxi" path="res://sprite_5.png" id="1_tyo0u"]
+[ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="2_f0gls"]
+[ext_resource type="PackedScene" uid="uid://drcrwrkjk1fby" path="res://node_2d.tscn" id="3_kso7j"]
+
+[node name="MenuGame" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 193.0
+offset_right = 901.0
+offset_bottom = 343.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_tyo0u")
+texture_hover = ExtResource("2_f0gls")
+
+[node name="Label" type="Label" parent="Control/TextureButton"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 12.0
+offset_right = 404.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 84
+text = "resume"
+
+[node name="TextureButton2" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 301.0
+offset_right = 897.0
+offset_bottom = 451.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_tyo0u")
+texture_hover = ExtResource("2_f0gls")
+
+[node name="Label" type="Label" parent="Control/TextureButton2"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 396.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 84
+text = "Settings"
+
+[node name="TextureButton3" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 397.0
+offset_right = 896.0
+offset_bottom = 547.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_tyo0u")
+texture_hover = ExtResource("2_f0gls")
+
+[node name="Label" type="Label" parent="Control/TextureButton3"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 11.0
+offset_right = 328.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 84
+text = "Sair"
+
+[node name="Node2D" parent="." instance=ExtResource("3_kso7j")]
