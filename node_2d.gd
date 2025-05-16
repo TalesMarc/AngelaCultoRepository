@@ -10,6 +10,8 @@ func _ready():
 		if pause_menu is Control:
 			pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+
+	
 func _input(event):
 	if event.is_action_pressed("Menu_Game"):
 		toggle_pause_menu() # Renomeei a função para deixar mais claro o propósito
@@ -44,3 +46,6 @@ func _on_texture_button_3_pressed() -> void:
 
 func _on_texture_button_pressed666() -> void:
 	pause_menu.visible = not pause_menu.visible
+@onready var fundo_animado = $Caminho/AnimatedSprite2D  # ajuste o caminho
+
+# ou o nome da sua animação
