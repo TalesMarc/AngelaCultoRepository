@@ -224,12 +224,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = -319.0
-offset_right = -11.0
-offset_bottom = 289.0
+offset_left = -117.0
+offset_top = -210.0
+offset_right = 83.0
+offset_bottom = 398.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.600001, 0.619565)
 
 [node name="TextureButton" type="TextureButton" parent="PauseMenu/GridContainer"]
 layout_mode = 2
