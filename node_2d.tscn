@@ -111,15 +111,13 @@ position = Vector2(-2.39122, 32.5974)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
-position = Vector2(-881.098, -602.802)
+position = Vector2(-74.0533, -199.783)
 offset = Vector2(300, 300)
-anchor_mode = 0
 zoom = Vector2(0.97, 0.97)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_horizontal_offset = -1.0
 drag_vertical_offset = -1.0
-drag_right_margin = 0.39
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
 sprite_frames = SubResource("SpriteFrames_2hxjc")
