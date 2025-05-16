@@ -111,8 +111,9 @@ position = Vector2(-2.39122, 32.5974)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
-position = Vector2(-75.1722, -187.794)
+position = Vector2(-881.098, -602.802)
 offset = Vector2(300, 300)
+anchor_mode = 0
 zoom = Vector2(0.97, 0.97)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
