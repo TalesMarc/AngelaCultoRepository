@@ -85,6 +85,7 @@ animations = [{
 size = Vector2(126.837, 124.515)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(604, 261)
 rotation = -0.00991185
 script = ExtResource("1_flf07")
 
