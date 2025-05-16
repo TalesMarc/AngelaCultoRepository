@@ -1,15 +1,11 @@
 extends Node2D # Ou Control, dependendo do nó principal da sua cena de jogo
 
-@onready var pause_menu = $PauseMenu
+@onready var pause_menu = $CanvasLayer/PauseMenu # Ajuste o caminho SE necessário
 var is_paused = false
 
 func _ready():
-	# Certifica-se de que o menu de pausa esteja inicialmente invisível
 	if is_instance_valid(pause_menu):
 		pause_menu.visible = false
-		# Se pause_menu for um Control, desativa o foco inicial
-		if pause_menu is Control:
-			pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _input(event):
 	if event.is_action_pressed("Menu_Game"):
@@ -20,15 +16,11 @@ func toggle_pause():
 	get_tree().paused = is_paused
 	if is_instance_valid(pause_menu):
 		pause_menu.visible = is_paused
-		# Se pause_menu for um Control, gerencia o foco
-		if pause_menu is Control:
-			if is_paused:
-				pause_menu.grab_focus()
-				pause_menu.mouse_filter = Control.MOUSE_FILTER_STOP
-			else:
-				# Opcional: devolve o foco para algum elemento do jogo se necessário
-				# get_node("NomeDoElementoDoJogo").grab_focus()
-				pause_menu.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		# Se houver um nó Control dentro do seu CanvasLayer que deve receber o foco:
+		# var algum_control = pause_menu.get_node("NomeDoControl")
+		# if is_instance_valid(algum_control) and algum_control is Control:
+		# 	if is_paused:
+		# 		algum_control.grab_focus()
 
 func _on_resume_button_pressed():
 	toggle_pause()
