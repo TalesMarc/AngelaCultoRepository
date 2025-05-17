@@ -182,7 +182,7 @@ position = Vector2(-4, 3)
 script = ExtResource("1_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(97.2303, 24.2153)
+position = Vector2(-38.2171, 119.588)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
@@ -196,7 +196,7 @@ drag_vertical_offset = -1.0
 drag_right_margin = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
-position = Vector2(100.045, -7.04822)
+position = Vector2(-32.9101, 88.6387)
 sprite_frames = SubResource("SpriteFrames_2hxjc")
 animation = &"Parado"
 frame_progress = 0.573919
