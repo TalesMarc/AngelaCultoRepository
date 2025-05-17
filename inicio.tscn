@@ -14,6 +14,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yogrx")
 
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_right = 1188.0
+offset_bottom = 674.0
+
 [node name="sair_button" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 436.0
@@ -23,7 +29,6 @@ offset_bottom = 630.0
 scale = Vector2(0.7, 0.7)
 texture_normal = ExtResource("2_htw3k")
 texture_hover = ExtResource("3_x8a4r")
-script = ExtResource("1_yogrx")
 
 [node name="Label" type="Label" parent="sair_button"]
 layout_mode = 0
@@ -75,6 +80,6 @@ scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Play"
 
-[connection signal="pressed" from="sair_button" to="sair_button" method="_on_pressed"]
+[connection signal="pressed" from="sair_button" to="." method="_on_sair_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
