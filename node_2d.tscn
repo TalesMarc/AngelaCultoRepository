@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="15_d2bti"]
 [ext_resource type="Texture2D" uid="uid://dnxochah5b24j" path="res://sprite_0 3.png" id="16_k73cj"]
 [ext_resource type="Texture2D" uid="uid://d0aj3qvixbbyp" path="res://botao5.png" id="17_k73cj"]
-[ext_resource type="AudioStream" uid="uid://bcwwid26kx8hm" path="res://doido - 17:05:2025 10.59.mp3" id="31_24dk6"]
+[ext_resource type="AudioStream" uid="uid://bcwwid26kx8hm" path="res://mus1.mp3" id="31_24dk6"]
 [ext_resource type="Script" uid="uid://chmho6hoqn8c6" path="res://character_body_2d.gd" id="32_mryly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
