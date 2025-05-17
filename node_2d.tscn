@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://drcrwrkjk1fby"]
+[gd_scene load_steps=39 format=3 uid="uid://drcrwrkjk1fby"]
 
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://btbt3p4i64hrd" path="res://node_2d.gd" id="1_flf07"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dnxochah5b24j" path="res://sprite_0 3.png" id="16_k73cj"]
 [ext_resource type="Texture2D" uid="uid://d0aj3qvixbbyp" path="res://botao5.png" id="17_k73cj"]
 [ext_resource type="AudioStream" uid="uid://bcwwid26kx8hm" path="res://doido - 17:05:2025 10.59.mp3" id="31_24dk6"]
+[ext_resource type="Script" uid="uid://chmho6hoqn8c6" path="res://character_body_2d.gd" id="32_mryly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(128.236, 125.902)
@@ -139,6 +140,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq1c5"]
+size = Vector2(127.414, 130.276)
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(604, 261)
 rotation = -0.00991185
@@ -153,7 +157,7 @@ scale = Vector2(2.12109, 1.42969)
 texture = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(949.304, 1484.44)
+position = Vector2(1514.76, 1239.04)
 scale = Vector2(2.12109, 1.42969)
 shape = SubResource("RectangleShape2D_0hol4")
 
@@ -177,15 +181,15 @@ rotation = 3.14159
 scale = Vector2(0.0835413, -1.04068)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
-position = Vector2(-4, 3)
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(-11.7219, -28.1176)
 script = ExtResource("1_0e48y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-38.2171, 119.588)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-161.128, -192.646)
 offset = Vector2(300, 300)
 zoom = Vector2(0.71, 0.71)
@@ -195,8 +199,8 @@ drag_horizontal_offset = -1.0
 drag_vertical_offset = -1.0
 drag_right_margin = 0.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
-position = Vector2(-32.9101, 88.6387)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-33.8607, 86.6686)
 sprite_frames = SubResource("SpriteFrames_2hxjc")
 animation = &"Parado"
 frame_progress = 0.573919
@@ -261,8 +265,30 @@ theme_override_font_sizes/font_size = 84
 text = "Sair"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(357.793, 123.552)
 stream = ExtResource("31_24dk6")
 autoplay = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(168.942, 6.67483)
+script = ExtResource("32_mryly")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(1.00989, -0.990036)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.00992584, -0.999962)
+shape = SubResource("RectangleShape2D_kq1c5")
+
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -46.294
+offset_top = -71.4624
+offset_right = 140.706
+offset_bottom = 43.5376
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 84
+text = "Gabi"
 
 [connection signal="pressed" from="PauseMenu/GridContainer/TextureButton" to="." method="_on_texture_button_pressed666"]
 [connection signal="pressed" from="PauseMenu/GridContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]

@@ -43,3 +43,8 @@ func _physics_process(delta: float) -> void:
 	if position.y > FALL_LIMIT:
 		position = respawn_position
 		velocity = Vector2.ZERO
+		
+func _process(delta):
+	# DEBUG - descomente para ver a posição
+	#print("Player pos: ", position)
+	pass	
