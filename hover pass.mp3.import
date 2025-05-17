@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkth7kn4af38"
+path="res://.godot/imported/hover pass.mp3-61d9367fb0b7772314071c62705d5e4c.mp3str"
+
+[deps]
+
+source_file="res://hover pass.mp3"
+dest_files=["res://.godot/imported/hover pass.mp3-61d9367fb0b7772314071c62705d5e4c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkfw1gs1b6rj1"]
+[gd_scene load_steps=7 format=3 uid="uid://dkfw1gs1b6rj1"]
 
 [ext_resource type="Script" uid="uid://bhafs30unjsfw" path="res://inicio.gd" id="1_yogrx"]
 [ext_resource type="Texture2D" uid="uid://d0aj3qvixbbyp" path="res://botao5.png" id="2_htw3k"]
 [ext_resource type="Texture2D" uid="uid://kue3gp2sclu8" path="res://sprite_0 2.png" id="3_7e6sy"]
 [ext_resource type="Texture2D" uid="uid://c5m46lfsshe1s" path="res://botao3.png" id="3_x8a4r"]
+[ext_resource type="AudioStream" uid="uid://bkth7kn4af38" path="res://hover pass.mp3" id="5_x8a4r"]
+[ext_resource type="AudioStream" uid="uid://chwq5hin5227f" path="res://hoverpass2.mp3" id="6_xagyt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,26 +42,6 @@ scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Quit"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 436.0
-offset_top = 380.0
-offset_right = 836.0
-offset_bottom = 508.0
-scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("2_htw3k")
-texture_hover = ExtResource("3_7e6sy")
-
-[node name="Label" type="Label" parent="TextureButton2"]
-layout_mode = 0
-offset_left = 74.2857
-offset_top = 21.4286
-offset_right = 394.286
-offset_bottom = 136.429
-scale = Vector2(0.8, 0.8)
-theme_override_font_sizes/font_size = 84
-text = "Options"
-
 [node name="TextureButton3" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 436.0
@@ -80,6 +62,32 @@ scale = Vector2(0.8, 0.8)
 theme_override_font_sizes/font_size = 84
 text = "Play"
 
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 380.0
+offset_right = 836.0
+offset_bottom = 508.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_htw3k")
+texture_hover = ExtResource("3_7e6sy")
+
+[node name="Label" type="Label" parent="TextureButton2"]
+layout_mode = 0
+offset_left = 74.2857
+offset_top = 21.4286
+offset_right = 394.286
+offset_bottom = 136.429
+scale = Vector2(0.8, 0.8)
+theme_override_font_sizes/font_size = 84
+text = "Options"
+
+[node name="HoverSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x8a4r")
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xagyt")
+
 [connection signal="pressed" from="sair_button" to="." method="_on_sair_button_pressed"]
-[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
