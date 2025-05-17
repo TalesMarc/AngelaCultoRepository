@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dvklttj08ocbb" path="res://character_body_2d_2.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://btbt3p4i64hrd" path="res://node_2d.gd" id="1_flf07"]
 [ext_resource type="Texture2D" uid="uid://bbbvodg33g4qc" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://vrraffq3gjv1" path="res://ChatGPT Image 17 de mai. de 2025, 19_27_40.png" id="2_ornx7"]
+[ext_resource type="Texture2D" uid="uid://vrraffq3gjv1" path="res://fundo1.png" id="2_ornx7"]
 [ext_resource type="Texture2D" uid="uid://c5m46lfsshe1s" path="res://botao3.png" id="3_cnnru"]
 [ext_resource type="Texture2D" uid="uid://el222y71w3oc" path="res://gay do jorge parado/sprite_0.png" id="3_d2bti"]
 [ext_resource type="Texture2D" uid="uid://db141ahu3jxtd" path="res://animação fundo terreno/sprite_00.png" id="3_ebxd8"]
