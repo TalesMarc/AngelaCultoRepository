@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_interacting:
 		velocity.y = JUMP_VELOCITY
 
-	# Movimento horizontal só se não estiver interagindo
+	# Movimento horizontal (apenas se não estiver interagindo)
 	var input_direction := 0
 	if not is_interacting:
 		if Input.is_action_pressed("move_left"):
@@ -29,7 +29,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("move_right"):
 			input_direction += 1
 
-	velocity.x = input_direction * speed
+		# Verifica se está correndo
+		var current_speed = speed
+		if Input.is_action_pressed("correr"):
+			current_speed *= 1.8  # ou use *= 2.0 para dobrar a velocidade
+
+		velocity.x = input_direction * current_speed
+	else:
+		velocity.x = 0  # Sem movimento horizontal ao interagir
 
 	# Move o player e lida com colisões
 	move_and_slide()
