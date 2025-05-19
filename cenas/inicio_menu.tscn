@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfr7wxo87g36e"]
+
+[ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_qkns1"]
+[ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="2_rmrpo"]
+[ext_resource type="Script" uid="uid://bms8px4xa564u" path="res://cenas/play_button.gd" id="3_ilfj8"]
+[ext_resource type="Script" uid="uid://be3x0vjn8h5fp" path="res://cenas/saves_button.gd" id="4_ahpag"]
+[ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="4_ilfj8"]
+[ext_resource type="Script" uid="uid://dm5y7ku7rpknb" path="res://cenas/settings_button.gd" id="5_4xauj"]
+[ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="5_rffoq"]
+[ext_resource type="Script" uid="uid://4flo0qhtohu7" path="res://cenas/quit_button.gd" id="6_x6pgs"]
+
+[node name="Menu_inicio" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="play_button" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 354.0
+offset_right = 1140.0
+offset_bottom = 504.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_qkns1")
+texture_hover = ExtResource("2_rmrpo")
+script = ExtResource("3_ilfj8")
+
+[node name="Label" type="Label" parent="play_button"]
+layout_mode = 0
+offset_left = 256.757
+offset_right = 457.757
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "Play"
+
+[node name="saves_button" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 427.0
+offset_right = 1140.0
+offset_bottom = 577.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_qkns1")
+texture_hover = ExtResource("2_rmrpo")
+script = ExtResource("4_ahpag")
+
+[node name="Label" type="Label" parent="saves_button"]
+layout_mode = 0
+offset_left = 213.513
+offset_top = 2.70266
+offset_right = 486.513
+offset_bottom = 139.703
+theme_override_font_sizes/font_size = 100
+text = "Saves"
+
+[node name="settings_button" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 499.0
+offset_right = 1140.0
+offset_bottom = 649.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_qkns1")
+texture_hover = ExtResource("2_rmrpo")
+script = ExtResource("5_4xauj")
+
+[node name="Label" type="Label" parent="settings_button"]
+layout_mode = 0
+offset_left = 164.865
+offset_top = -2.70274
+offset_right = 551.865
+offset_bottom = 134.297
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+
+[node name="quit_button" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 570.0
+offset_right = 1140.0
+offset_bottom = 720.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_qkns1")
+texture_hover = ExtResource("2_rmrpo")
+script = ExtResource("6_x6pgs")
+
+[node name="Label" type="Label" parent="quit_button"]
+layout_mode = 0
+offset_left = 229.73
+offset_top = -2.70274
+offset_right = 438.73
+offset_bottom = 134.297
+theme_override_font_sizes/font_size = 100
+text = "Quit"
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ilfj8")
+
+[node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rffoq")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 938.0
+offset_top = 576.0
+offset_right = 978.0
+offset_bottom = 616.0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 28.0
+offset_right = 576.0
+offset_bottom = 97.0
+scale = Vector2(0.335, 0.335)
+theme_override_font_sizes/font_size = 50
+text = "Version 1.0.00  May 2025"
