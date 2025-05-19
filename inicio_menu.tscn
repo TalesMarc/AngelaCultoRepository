@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cfr7wxo87g36e"]
+
+[node name="Menu_inicio" type="Node2D"]
+position = Vector2(0, 1)
