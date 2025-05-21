@@ -1,16 +1,54 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfr7wxo87g36e"]
+[gd_scene load_steps=13 format=3 uid="uid://cfr7wxo87g36e"]
 
+[ext_resource type="Script" uid="uid://cgihe4o1dycgh" path="res://scripts/inicio_menu.gd" id="1_4xauj"]
 [ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_qkns1"]
 [ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="2_rmrpo"]
-[ext_resource type="Script" uid="uid://bms8px4xa564u" path="res://cenas/play_button.gd" id="3_ilfj8"]
-[ext_resource type="Script" uid="uid://be3x0vjn8h5fp" path="res://cenas/saves_button.gd" id="4_ahpag"]
+[ext_resource type="Script" uid="uid://bms8px4xa564u" path="res://scripts/play_button.gd" id="3_ilfj8"]
+[ext_resource type="Script" uid="uid://be3x0vjn8h5fp" path="res://scripts/saves_button.gd" id="4_ahpag"]
 [ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="4_ilfj8"]
-[ext_resource type="Script" uid="uid://dm5y7ku7rpknb" path="res://cenas/settings_button.gd" id="5_4xauj"]
+[ext_resource type="Script" uid="uid://dm5y7ku7rpknb" path="res://scripts/settings_button.gd" id="5_4xauj"]
 [ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="5_rffoq"]
-[ext_resource type="Script" uid="uid://4flo0qhtohu7" path="res://cenas/quit_button.gd" id="6_x6pgs"]
+[ext_resource type="Script" uid="uid://4flo0qhtohu7" path="res://scripts/quit_button.gd" id="6_x6pgs"]
+
+[sub_resource type="Animation" id="Animation_bsu7h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x6pgs"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmgwp"]
+_data = {
+&"RESET": SubResource("Animation_bsu7h"),
+&"fade_in": SubResource("Animation_x6pgs")
+}
 
 [node name="Menu_inicio" type="Node2D"]
 position = Vector2(0, 1)
+script = ExtResource("1_4xauj")
 
 [node name="play_button" type="TextureButton" parent="." groups=["SomBotoes"]]
 offset_left = 450.0
@@ -108,3 +146,21 @@ offset_bottom = 97.0
 scale = Vector2(0.335, 0.335)
 theme_override_font_sizes/font_size = 50
 text = "Version 1.0.00  May 2025"
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer"]
+offset_right = 1158.0
+offset_bottom = 653.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FadeAnimation" type="AnimationPlayer" parent="FadeLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_hmgwp")
+}
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="saves_button" to="." method="_on_saves_button_pressed"]
+[connection signal="pressed" from="settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

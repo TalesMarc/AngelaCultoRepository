@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpagjnqnv8jrk"]
+
+[ext_resource type="Script" uid="uid://eyxxsq0gvqks" path="res://cenas/name_play.gd" id="1_j6bpt"]
+[ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_xyum3"]
+[ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="2_k32hi"]
+[ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="4_k32hi"]
+[ext_resource type="Script" uid="uid://cb7nqwcfif4iv" path="res://cenas/idiom.gd" id="4_m0af3"]
+[ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="5_d8jfl"]
+[ext_resource type="Script" uid="uid://cr1miasj6ug1g" path="res://cenas/back.gd" id="5_dpet6"]
+
+[node name="NamePlay" type="Node2D"]
+script = ExtResource("1_j6bpt")
+
+[node name="idiom" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 466.0
+offset_right = 1140.0
+offset_bottom = 616.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_xyum3")
+texture_hover = ExtResource("2_k32hi")
+script = ExtResource("4_m0af3")
+
+[node name="Label" type="Label" parent="idiom"]
+layout_mode = 0
+offset_left = 175.676
+offset_top = 2.7027
+offset_right = 510.676
+offset_bottom = 139.703
+theme_override_font_sizes/font_size = 100
+text = "Accept"
+
+[node name="back" type="TextureButton" parent="." groups=["SomBotoes"]]
+offset_left = 450.0
+offset_top = 539.0
+offset_right = 1140.0
+offset_bottom = 689.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_xyum3")
+texture_hover = ExtResource("2_k32hi")
+script = ExtResource("5_dpet6")
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 0
+offset_left = 232.432
+offset_top = 2.70266
+offset_right = 505.432
+offset_bottom = 139.703
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k32hi")
+
+[node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_d8jfl")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

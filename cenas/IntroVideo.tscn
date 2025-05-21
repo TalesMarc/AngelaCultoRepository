@@ -14,4 +14,11 @@ scale = Vector2(0.602707, 0.602255)
 stream = ExtResource("2_nwrec")
 autoplay = true
 
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1156.0
+offset_bottom = 659.0
+
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

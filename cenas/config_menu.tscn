@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://bagw406angw4o"]
+
+[ext_resource type="Script" uid="uid://bafn7cc4uyao6" path="res://scripts/volume_menu.gd" id="1_0uor3"]
+[ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="2_3w01t"]
+[ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="3_8nwny"]
+[ext_resource type="Script" uid="uid://bms8px4xa564u" path="res://scripts/play_button.gd" id="4_5rf22"]
+[ext_resource type="Script" uid="uid://be3x0vjn8h5fp" path="res://scripts/saves_button.gd" id="5_yonq5"]
+[ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="6_3w01t"]
+[ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="7_8nwny"]
+
+[node name="ConfigMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0uor3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 307.0
+offset_right = 694.0
+offset_bottom = 330.0
+
+[node name="VolumePercentLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="idiom" type="TextureButton" parent="." groups=["SomBotoes"]]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 466.0
+offset_right = 1140.0
+offset_bottom = 616.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("2_3w01t")
+texture_hover = ExtResource("3_8nwny")
+script = ExtResource("4_5rf22")
+
+[node name="Label" type="Label" parent="idiom"]
+layout_mode = 0
+offset_left = 210.811
+offset_right = 545.811
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 100
+text = "Idiom"
+
+[node name="back" type="TextureButton" parent="." groups=["SomBotoes"]]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 539.0
+offset_right = 1140.0
+offset_bottom = 689.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("2_3w01t")
+texture_hover = ExtResource("3_8nwny")
+script = ExtResource("5_yonq5")
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 0
+offset_left = 232.432
+offset_top = 2.70266
+offset_right = 505.432
+offset_bottom = 139.703
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="volume" type="Label" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 282.0
+offset_right = 603.0
+offset_bottom = 331.0
+text = "Volume
+"
+
+[node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_3w01t")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 576.0
+offset_right = 1120.0
+offset_bottom = 616.0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 28.0
+offset_right = 576.0
+offset_bottom = 97.0
+scale = Vector2(0.335, 0.335)
+theme_override_font_sizes/font_size = 50
+text = "Version 1.0.00  May 2025"
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8nwny")
+
+[connection signal="value_changed" from="HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

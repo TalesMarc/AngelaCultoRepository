@@ -14,6 +14,10 @@ config/name="AngelaCulto"
 run/main_scene="uid://dv8v3qwyhuga8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+Musica1="*res://scripts/musica1.gd"
+
 [display]
 
 window/size/mode=3

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://o4i1y4tb1fvo"]
+
+[ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_hfu60"]
+[ext_resource type="Script" uid="uid://b2xxjbkh6c30a" path="res://scripts/saves.gd" id="1_x5dup"]
+[ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="2_75rjn"]
+[ext_resource type="Script" uid="uid://be3x0vjn8h5fp" path="res://scripts/saves_button.gd" id="3_upoyc"]
+[ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="4_6sf10"]
+[ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="5_g8808"]
+
+[node name="Saves" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5dup")
+
+[node name="back" type="TextureButton" parent="." groups=["SomBotoes"]]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 539.0
+offset_right = 1140.0
+offset_bottom = 689.0
+scale = Vector2(0.37, 0.37)
+texture_normal = ExtResource("1_hfu60")
+texture_hover = ExtResource("2_75rjn")
+script = ExtResource("3_upoyc")
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 0
+offset_left = 232.432
+offset_top = 2.70266
+offset_right = 505.432
+offset_bottom = 139.703
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6sf10")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 576.0
+offset_right = 1120.0
+offset_bottom = 616.0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 28.0
+offset_right = 576.0
+offset_bottom = 97.0
+scale = Vector2(0.335, 0.335)
+theme_override_font_sizes/font_size = 50
+text = "Version 1.0.00  May 2025"
+
+[node name="click_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g8808")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
