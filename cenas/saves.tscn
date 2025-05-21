@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://o4i1y4tb1fvo"]
+[gd_scene load_steps=8 format=3 uid="uid://o4i1y4tb1fvo"]
 
 [ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_hfu60"]
 [ext_resource type="Script" uid="uid://b2xxjbkh6c30a" path="res://scripts/saves.gd" id="1_x5dup"]
@@ -7,11 +7,61 @@
 [ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="4_6sf10"]
 [ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="5_g8808"]
 
+[sub_resource type="GDScript" id="GDScript_x5dup"]
+script/source = "extends ScrollContainer
+
+
+@onready var lista_container = $VBoxContainer
+@onready var botao_modelo = $VBoxContainer/BotaoModelo
+
+func atualizar_lista_saves():
+	# Limpa os filhos
+	for filho in lista_container.get_children():
+		filho.queue_free()
+
+	var dir = DirAccess.open(\"user://saves\")
+	if not dir or not dir.dir_exists(\"user://saves\"):
+		print(\"Pasta de saves não existe.\")
+		return
+
+	dir.list_dir_begin()
+	var arquivo = dir.get_next()
+	while arquivo != \"\":
+		if arquivo.ends_with(\".save\"):
+			var nome_save = arquivo.replace(\".save\", \"\")
+
+			var botao = $VBoxContainer/BotaoModelo.duplicate()
+			botao.visible = true  # Modelo original fica invisível, os duplicados visíveis
+
+			# Ajusta o Label (assumindo que ele está dentro do botão)
+			var label = botao.get_node(\"Label\")
+			label.text = nome_save
+
+			# Ajusta o Sprite2D se quiser trocar a textura (exemplo)
+			var sprite = botao.get_node(\"Sprite2D\")
+			# sprite.texture = preload(\"res://imagens_saves/\" + nome_save + \".png\")  # se quiser uma imagem por save
+
+			# Conecta o botão
+			var nome_local = nome_save
+			botao.pressed.connect(func():
+				print(\"Botão clicado:\", nome_local)
+				# Aqui você coloca a lógica para carregar o save
+			)
+
+			lista_container.add_child(botao)
+		arquivo = dir.get_next()
+	dir.list_dir_end()
+"
+
 [node name="Saves" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x5dup")
@@ -58,5 +108,34 @@ text = "Version 1.0.00  May 2025"
 
 [node name="click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_g8808")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 102.0
+offset_right = 1114.0
+offset_bottom = 760.0
+scale = Vector2(0.468743, 0.559065)
+script = SubResource("GDScript_x5dup")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+
+[node name="BotaoModelo" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("1_hfu60")
+texture_hover = ExtResource("2_75rjn")
+
+[node name="TextoLabel" type="Label" parent="ScrollContainer/VBoxContainer/BotaoModelo"]
+layout_mode = 1
+offset_left = 177.069
+offset_top = -7.15479
+offset_right = 484.069
+offset_bottom = 138.845
+theme_override_font_sizes/font_size = 106
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

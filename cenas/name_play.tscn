@@ -1,17 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpagjnqnv8jrk"]
+[gd_scene load_steps=9 format=3 uid="uid://bpagjnqnv8jrk"]
 
-[ext_resource type="Script" uid="uid://eyxxsq0gvqks" path="res://cenas/name_play.gd" id="1_j6bpt"]
+[ext_resource type="Script" uid="uid://eyxxsq0gvqks" path="res://scripts/name_play.gd" id="1_j6bpt"]
 [ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="1_xyum3"]
 [ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="2_k32hi"]
 [ext_resource type="AudioStream" uid="uid://8bgbtn33vju7" path="res://ImagensMusSolo/click_sound.mp3" id="4_k32hi"]
-[ext_resource type="Script" uid="uid://cb7nqwcfif4iv" path="res://cenas/idiom.gd" id="4_m0af3"]
+[ext_resource type="Script" uid="uid://cb7nqwcfif4iv" path="res://scripts/idiom.gd" id="4_m0af3"]
 [ext_resource type="AudioStream" uid="uid://ddvslsdkvs04n" path="res://ImagensMusSolo/hover_sound.mp3" id="5_d8jfl"]
-[ext_resource type="Script" uid="uid://cr1miasj6ug1g" path="res://cenas/back.gd" id="5_dpet6"]
+[ext_resource type="Script" uid="uid://cr1miasj6ug1g" path="res://scripts/back.gd" id="5_dpet6"]
 
-[node name="NamePlay" type="Node2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0af3"]
+modulate_color = Color(1, 1, 1, 0)
+
+[node name="NamePlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_j6bpt")
 
-[node name="idiom" type="TextureButton" parent="." groups=["SomBotoes"]]
+[node name="BotaoAccept" type="TextureButton" parent="." groups=["SomBotoes"]]
+layout_mode = 0
 offset_left = 450.0
 offset_top = 466.0
 offset_right = 1140.0
@@ -21,7 +27,7 @@ texture_normal = ExtResource("1_xyum3")
 texture_hover = ExtResource("2_k32hi")
 script = ExtResource("4_m0af3")
 
-[node name="Label" type="Label" parent="idiom"]
+[node name="Label" type="Label" parent="BotaoAccept"]
 layout_mode = 0
 offset_left = 175.676
 offset_top = 2.7027
@@ -31,6 +37,7 @@ theme_override_font_sizes/font_size = 100
 text = "Accept"
 
 [node name="back" type="TextureButton" parent="." groups=["SomBotoes"]]
+layout_mode = 0
 offset_left = 450.0
 offset_top = 539.0
 offset_right = 1140.0
@@ -54,5 +61,23 @@ stream = ExtResource("4_k32hi")
 
 [node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_d8jfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 223)
+scale = Vector2(0.417391, 0.4)
+texture = ExtResource("2_k32hi")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 199.0
+offset_right = 1128.0
+offset_bottom = 318.0
+scale = Vector2(0.385641, 0.413917)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 81
+theme_override_styles/normal = SubResource("StyleBoxTexture_m0af3")
+text = "New Game"
+alignment = 1
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
