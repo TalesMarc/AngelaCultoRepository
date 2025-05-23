@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://4usf2pkxrgv"]
+[gd_scene load_steps=20 format=3 uid="uid://4usf2pkxrgv"]
 
 [ext_resource type="Texture2D" uid="uid://7dcrdrffn1gt" path="res://titles/grama0.png" id="1_ex0so"]
 [ext_resource type="Script" uid="uid://bwh7tcbw73kgv" path="res://scripts/gameplay_1.gd" id="1_lfgjk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bfiye6hodcjgn" path="res://titles/Paredes10.png" id="3_uhhlp"]
 [ext_resource type="Script" uid="uid://dxdol3s0wjh14" path="res://scripts/character_body_2d.gd" id="4_lfgjk"]
 [ext_resource type="Texture2D" uid="uid://by3ow7kk2vj7w" path="res://ImagensMusSolo/muie_demo.png" id="5_ysvee"]
+[ext_resource type="Script" uid="uid://cpgw3sdbxt1up" path="res://cenas/camera_2d.gd" id="6_5fg6i"]
 [ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="7_ysvee"]
 [ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="8_wd3yv"]
 [ext_resource type="Script" uid="uid://dvc2vx1nw6khx" path="res://cenas/save.gd" id="8_ysvee"]
@@ -109,6 +110,7 @@ position = Vector2(421, 389)
 zoom = Vector2(3, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("6_5fg6i")
 
 [node name="Control" type="Control" parent="Personagens/Persona1/Camera2D"]
 layout_mode = 3
