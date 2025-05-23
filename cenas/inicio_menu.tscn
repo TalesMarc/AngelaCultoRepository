@@ -62,12 +62,13 @@ script = ExtResource("3_ilfj8")
 
 [node name="Label" type="Label" parent="play_button"]
 layout_mode = 0
-offset_left = 156.757
-offset_top = 35.1351
-offset_right = 556.757
-offset_bottom = 172.135
+offset_left = 43.2432
+offset_top = 24.3243
+offset_right = 843.243
+offset_bottom = 161.324
+scale = Vector2(0.773791, 1.09952)
 theme_override_font_sizes/font_size = 100
-text = "Play"
+text = "New Game"
 
 [node name="saves_button" type="TextureButton" parent="." groups=["SomBotoes"]]
 offset_left = 450.0
