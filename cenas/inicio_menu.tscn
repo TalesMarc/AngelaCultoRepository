@@ -62,9 +62,10 @@ script = ExtResource("3_ilfj8")
 
 [node name="Label" type="Label" parent="play_button"]
 layout_mode = 0
-offset_left = 256.757
-offset_right = 457.757
-offset_bottom = 137.0
+offset_left = 156.757
+offset_top = 35.1351
+offset_right = 556.757
+offset_bottom = 172.135
 theme_override_font_sizes/font_size = 100
 text = "Play"
 
@@ -80,10 +81,10 @@ script = ExtResource("4_ahpag")
 
 [node name="Label" type="Label" parent="saves_button"]
 layout_mode = 0
-offset_left = 213.513
-offset_top = 2.70266
-offset_right = 486.513
-offset_bottom = 139.703
+offset_left = 113.513
+offset_top = 24.3244
+offset_right = 613.513
+offset_bottom = 161.325
 theme_override_font_sizes/font_size = 100
 text = "Saves"
 
@@ -99,10 +100,11 @@ script = ExtResource("5_4xauj")
 
 [node name="Label" type="Label" parent="settings_button"]
 layout_mode = 0
-offset_left = 164.865
-offset_top = -2.70274
-offset_right = 551.865
-offset_bottom = 134.297
+offset_left = 48.6486
+offset_top = 24.3243
+offset_right = 848.649
+offset_bottom = 161.324
+scale = Vector2(0.763717, 1)
 theme_override_font_sizes/font_size = 100
 text = "Settings"
 
@@ -118,10 +120,10 @@ script = ExtResource("6_x6pgs")
 
 [node name="Label" type="Label" parent="quit_button"]
 layout_mode = 0
-offset_left = 229.73
-offset_top = -2.70274
-offset_right = 438.73
-offset_bottom = 134.297
+offset_left = 159.459
+offset_top = 35.1351
+offset_right = 559.459
+offset_bottom = 172.135
 theme_override_font_sizes/font_size = 100
 text = "Quit"
 
@@ -139,10 +141,10 @@ offset_bottom = 616.0
 
 [node name="Label" type="Label" parent="TextureButton"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 28.0
-offset_right = 576.0
-offset_bottom = 97.0
+offset_left = -211.0
+offset_top = 25.0
+offset_right = 989.0
+offset_bottom = 94.0
 scale = Vector2(0.335, 0.335)
 theme_override_font_sizes/font_size = 50
 text = "Version 1.0.00  May 2025"

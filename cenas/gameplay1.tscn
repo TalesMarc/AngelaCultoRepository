@@ -111,7 +111,6 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Control" type="Control" parent="Personagens/Persona1/Camera2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -421.0
@@ -121,8 +120,10 @@ offset_bottom = -349.0
 
 [node name="ColorRect" type="ColorRect" parent="Personagens/Persona1/Camera2D/Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -19.7802
+offset_top = -6.59341
+offset_right = 20.2198
+offset_bottom = 33.4066
 scale = Vector2(22.3994, 17.9242)
 color = Color(0, 0, 0, 0.643137)
 
@@ -138,9 +139,11 @@ texture_hover = ExtResource("8_wd3yv")
 
 [node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/resume"]
 layout_mode = 0
-offset_left = 123.113
-offset_right = 568.113
-offset_bottom = 157.0
+offset_left = 116.582
+offset_top = 29.7462
+offset_right = 806.582
+offset_bottom = 144.746
+scale = Vector2(0.657685, 0.82144)
 theme_override_font_sizes/font_size = 115
 text = "Resume"
 
@@ -156,9 +159,11 @@ texture_hover = ExtResource("8_wd3yv")
 
 [node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/settings"]
 layout_mode = 0
-offset_left = 123.113
-offset_right = 568.113
-offset_bottom = 157.0
+offset_left = 83.2736
+offset_top = 29.7435
+offset_right = 1003.27
+offset_bottom = 186.743
+scale = Vector2(0.621696, 0.733999)
 theme_override_font_sizes/font_size = 115
 text = "Settings"
 
@@ -175,10 +180,11 @@ script = ExtResource("8_ysvee")
 
 [node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/Save"]
 layout_mode = 0
-offset_left = 213.395
-offset_top = -8.10717
-offset_right = 658.395
-offset_bottom = 148.893
+offset_left = 199.853
+offset_top = 29.7413
+offset_right = 659.853
+offset_bottom = 144.741
+scale = Vector2(0.636392, 0.822099)
 theme_override_font_sizes/font_size = 115
 text = "Save"
 
@@ -197,9 +203,11 @@ script = ExtResource("9_wd3yv")
 
 [node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/QUIT"]
 layout_mode = 0
-offset_left = 73.8678
-offset_right = 616.868
-offset_bottom = 157.0
+offset_left = 49.9649
+offset_top = 44.6114
+offset_right = 1084.96
+offset_bottom = 182.611
+scale = Vector2(0.577476, 0.655884)
 theme_override_font_sizes/font_size = 115
 text = "Quit/Save"
 

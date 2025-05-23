@@ -40,9 +40,10 @@ script = ExtResource("4_5rf22")
 
 [node name="Label" type="Label" parent="idiom"]
 layout_mode = 0
-offset_left = 210.811
-offset_right = 545.811
-offset_bottom = 137.0
+offset_left = 83.7838
+offset_top = 32.4324
+offset_right = 583.784
+offset_bottom = 169.432
 theme_override_font_sizes/font_size = 100
 text = "Idiom"
 
@@ -59,19 +60,19 @@ script = ExtResource("5_yonq5")
 
 [node name="Label" type="Label" parent="back"]
 layout_mode = 0
-offset_left = 232.432
-offset_top = 2.70266
-offset_right = 505.432
-offset_bottom = 139.703
+offset_left = 154.054
+offset_top = 27.027
+offset_right = 554.054
+offset_bottom = 164.027
 theme_override_font_sizes/font_size = 100
 text = "Back"
 
 [node name="volume" type="Label" parent="."]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 282.0
-offset_right = 603.0
-offset_bottom = 331.0
+offset_left = 505.0
+offset_top = 283.0
+offset_right = 601.0
+offset_bottom = 332.0
 text = "Volume
 "
 
@@ -87,10 +88,10 @@ offset_bottom = 616.0
 
 [node name="Label" type="Label" parent="TextureButton"]
 layout_mode = 0
-offset_left = -16.0
-offset_top = 28.0
-offset_right = 576.0
-offset_bottom = 97.0
+offset_left = -204.0
+offset_top = 29.0
+offset_right = 996.0
+offset_bottom = 98.0
 scale = Vector2(0.335, 0.335)
 theme_override_font_sizes/font_size = 50
 text = "Version 1.0.00  May 2025"

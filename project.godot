@@ -24,6 +24,10 @@ GameState="*res://GameState.gd"
 window/size/mode=3
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom_font="uid://c6nbt6if318w"
+
 [input]
 
 frente={

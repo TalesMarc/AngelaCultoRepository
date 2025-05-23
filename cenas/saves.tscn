@@ -79,32 +79,16 @@ script = ExtResource("3_upoyc")
 
 [node name="Label" type="Label" parent="back"]
 layout_mode = 0
-offset_left = 232.432
-offset_top = 2.70266
-offset_right = 505.432
-offset_bottom = 139.703
+offset_left = 170.27
+offset_top = 29.7297
+offset_right = 570.27
+offset_bottom = 166.73
+scale = Vector2(0.870936, 1)
 theme_override_font_sizes/font_size = 100
 text = "Back"
 
 [node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6sf10")
-
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 938.0
-offset_top = 576.0
-offset_right = 1120.0
-offset_bottom = 616.0
-
-[node name="Label" type="Label" parent="TextureButton"]
-layout_mode = 0
-offset_left = -16.0
-offset_top = 28.0
-offset_right = 576.0
-offset_bottom = 97.0
-scale = Vector2(0.335, 0.335)
-theme_override_font_sizes/font_size = 50
-text = "Version 1.0.00  May 2025"
 
 [node name="click_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_g8808")
@@ -123,17 +107,17 @@ custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 
 [node name="BotaoModelo" type="TextureButton" parent="ScrollContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("1_hfu60")
 texture_hover = ExtResource("2_75rjn")
 
 [node name="TextoLabel" type="Label" parent="ScrollContainer/VBoxContainer/BotaoModelo"]
 layout_mode = 1
-offset_left = 177.069
-offset_top = -7.15479
-offset_right = 484.069
-offset_bottom = 138.845
+offset_left = 19.0
+offset_top = 38.0
+offset_right = 995.0
+offset_bottom = 144.0
+scale = Vector2(0.664751, 0.802295)
 theme_override_font_sizes/font_size = 106
 horizontal_alignment = 1
 vertical_alignment = 1
