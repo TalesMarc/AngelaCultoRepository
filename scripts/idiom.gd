@@ -11,11 +11,9 @@ func _on_mouse_entered():
 		som_node.play()
 
 func _on_pressed():
-	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://cenas/gameplay1.tscn")
 	var parent_node = get_parent()
 	
-	# Pega o LineEdit
+	# Pega o nome do LineEdit
 	var line_edit = parent_node.get_node("LineEdit")
 	if line_edit == null:
 		push_error("LineEdit não encontrado!")
@@ -23,40 +21,41 @@ func _on_pressed():
 	
 	var nome_save = line_edit.text.strip_edges()
 	if nome_save == "":
-		print("Por favor, digite um nome válido.")
+		print("Digite um nome válido.")
 		return
 	
-	# Diretório para saves
+	# Cria diretório de saves se não existir
 	var save_dir = "user://saves"
 	var dir_access = DirAccess.open("user://")
 	if not dir_access.dir_exists("saves"):
-		var err = dir_access.make_dir("saves")
-		if err != OK:
-			push_error("Erro ao criar diretório de saves")
-			return
+		dir_access.make_dir("saves")
 	
-	var save_path = save_dir + "/" + nome_save + ".save"
+	var save_path = save_dir + "/" + nome_save + ".json"
 	if FileAccess.file_exists(save_path):
 		print("Já existe um save com esse nome!")
 		return
 	
-	var file = FileAccess.open(save_path, FileAccess.ModeFlags.WRITE)
-	if file == null:
-		push_error("Erro ao criar o save.")
-		return
+	# Dados iniciais do save
+	var data = {
+		"player_position": [100, 100],
+		"money": 0,
+		"inventory": []
+	}
 	
-	file.store_line("Save de " + nome_save)
+	# Cria o arquivo JSON
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
 	file.close()
+	print("Save criado: ", save_path)
 	
-	print("Save criado com sucesso: ", nome_save)
+	# Armazena no GameState
+	GameState.current_save_path = save_path
+	GameState.save_data = data
 	
-	# Fade out música
-	if parent_node.has_node("Musica1"):
-		var musica = parent_node.get_node("Musica1")
-		if musica.has_method("fade_out"):
-			musica.fade_out()
+	# Música e transição
+	var musica = parent_node.get_node("Musica1")
+	if musica:
+		musica.fade_out()
 	
-	# Toca som de clique
-	var som_node = parent_node.get_node("click_sound")
-	if som_node:
-		som_node.play()
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://cenas/gameplay1.tscn")

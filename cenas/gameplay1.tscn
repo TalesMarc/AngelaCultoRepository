@@ -1,13 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://4usf2pkxrgv"]
+[gd_scene load_steps=19 format=3 uid="uid://4usf2pkxrgv"]
 
 [ext_resource type="Texture2D" uid="uid://7dcrdrffn1gt" path="res://titles/grama0.png" id="1_ex0so"]
-[ext_resource type="Script" uid="uid://bwh7tcbw73kgv" path="res://cenas/gameplay_1.gd" id="1_lfgjk"]
+[ext_resource type="Script" uid="uid://bwh7tcbw73kgv" path="res://scripts/gameplay_1.gd" id="1_lfgjk"]
 [ext_resource type="Texture2D" uid="uid://bjuvutmdqx7w2" path="res://titles/pisoroxo0.png" id="2_1k62w"]
 [ext_resource type="Texture2D" uid="uid://bfiye6hodcjgn" path="res://titles/Paredes10.png" id="3_uhhlp"]
 [ext_resource type="Script" uid="uid://dxdol3s0wjh14" path="res://scripts/character_body_2d.gd" id="4_lfgjk"]
 [ext_resource type="Texture2D" uid="uid://by3ow7kk2vj7w" path="res://ImagensMusSolo/muie_demo.png" id="5_ysvee"]
 [ext_resource type="Texture2D" uid="uid://r70kc8lcs6pk" path="res://ImagensMusSolo/botao_menu_normal.png" id="7_ysvee"]
 [ext_resource type="Texture2D" uid="uid://dl6tbxahy4xk1" path="res://ImagensMusSolo/botao_menu_hover.png" id="8_wd3yv"]
+[ext_resource type="Script" uid="uid://dvc2vx1nw6khx" path="res://cenas/save.gd" id="8_ysvee"]
+[ext_resource type="Script" uid="uid://3m5ef81vm8fq" path="res://cenas/quit.gd" id="9_wd3yv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qng3t"]
 texture = ExtResource("1_ex0so")
@@ -108,26 +110,23 @@ zoom = Vector2(3, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Personagens/Persona1"]
-texture_filter = 1
-position = Vector2(420.879, 369.231)
-texture = ExtResource("5_ysvee")
-
-[node name="Control" type="Control" parent="Personagens/Persona1"]
+[node name="Control" type="Control" parent="Personagens/Persona1/Camera2D"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -421.0
+offset_top = -389.0
+offset_right = -381.0
+offset_bottom = -349.0
 
-[node name="ColorRect" type="ColorRect" parent="Personagens/Persona1/Control"]
+[node name="ColorRect" type="ColorRect" parent="Personagens/Persona1/Camera2D/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(22.3994, 17.9242)
 color = Color(0, 0, 0, 0.643137)
 
-[node name="resume" type="TextureButton" parent="Personagens/Persona1/Control"]
+[node name="resume" type="TextureButton" parent="Personagens/Persona1/Camera2D/Control"]
 layout_mode = 0
 offset_left = 397.802
 offset_top = 320.879
@@ -137,7 +136,7 @@ scale = Vector2(0.0659834, 0.0738885)
 texture_normal = ExtResource("7_ysvee")
 texture_hover = ExtResource("8_wd3yv")
 
-[node name="Label" type="Label" parent="Personagens/Persona1/Control/resume"]
+[node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/resume"]
 layout_mode = 0
 offset_left = 123.113
 offset_right = 568.113
@@ -145,7 +144,7 @@ offset_bottom = 157.0
 theme_override_font_sizes/font_size = 115
 text = "Resume"
 
-[node name="settings" type="TextureButton" parent="Personagens/Persona1/Control"]
+[node name="settings" type="TextureButton" parent="Personagens/Persona1/Camera2D/Control"]
 layout_mode = 0
 offset_left = 397.802
 offset_top = 334.066
@@ -155,7 +154,7 @@ scale = Vector2(0.0659834, 0.0738885)
 texture_normal = ExtResource("7_ysvee")
 texture_hover = ExtResource("8_wd3yv")
 
-[node name="Label" type="Label" parent="Personagens/Persona1/Control/settings"]
+[node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/settings"]
 layout_mode = 0
 offset_left = 123.113
 offset_right = 568.113
@@ -163,7 +162,7 @@ offset_bottom = 157.0
 theme_override_font_sizes/font_size = 115
 text = "Settings"
 
-[node name="Save" type="TextureButton" parent="Personagens/Persona1/Control"]
+[node name="Save" type="TextureButton" parent="Personagens/Persona1/Camera2D/Control"]
 layout_mode = 0
 offset_left = 397.802
 offset_top = 347.253
@@ -172,8 +171,9 @@ offset_bottom = 497.253
 scale = Vector2(0.0659834, 0.0738885)
 texture_normal = ExtResource("7_ysvee")
 texture_hover = ExtResource("8_wd3yv")
+script = ExtResource("8_ysvee")
 
-[node name="Label" type="Label" parent="Personagens/Persona1/Control/Save"]
+[node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/Save"]
 layout_mode = 0
 offset_left = 213.395
 offset_top = -8.10717
@@ -182,7 +182,7 @@ offset_bottom = 148.893
 theme_override_font_sizes/font_size = 115
 text = "Save"
 
-[node name="QUIT" type="TextureButton" parent="Personagens/Persona1/Control"]
+[node name="QUIT" type="TextureButton" parent="Personagens/Persona1/Camera2D/Control"]
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 0
@@ -193,8 +193,9 @@ offset_bottom = 510.44
 scale = Vector2(0.0659834, 0.0738885)
 texture_normal = ExtResource("7_ysvee")
 texture_hover = ExtResource("8_wd3yv")
+script = ExtResource("9_wd3yv")
 
-[node name="Label" type="Label" parent="Personagens/Persona1/Control/QUIT"]
+[node name="Label" type="Label" parent="Personagens/Persona1/Camera2D/Control/QUIT"]
 layout_mode = 0
 offset_left = 73.8678
 offset_right = 616.868
@@ -202,4 +203,10 @@ offset_bottom = 157.0
 theme_override_font_sizes/font_size = 115
 text = "Quit/Save"
 
-[connection signal="pressed" from="Personagens/Persona1/Control/QUIT" to="." method="_on_quit_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="Personagens/Persona1"]
+texture_filter = 1
+position = Vector2(420.879, 369.231)
+texture = ExtResource("5_ysvee")
+
+[connection signal="pressed" from="Personagens/Persona1/Camera2D/Control/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Personagens/Persona1/Camera2D/Control/QUIT" to="." method="_on_quit_pressed"]

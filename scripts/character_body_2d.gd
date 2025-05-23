@@ -1,29 +1,30 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+var speed := 100.0  # variável que controla a velocidade do personagem
 const JUMP_VELOCITY = -400.0
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(_delta):
+	# Se speed for zero, bloqueia o movimento
+	if speed == 0:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	# Pulo
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Direções com nomes personalizados
 	var horizontal_direction := Input.get_axis("esquerda", "direita")
-	var vertical_direction := Input.get_axis("frente", "tras")  # Corrigido: frente = cima (W), tras = baixo (S)
+	var vertical_direction := Input.get_axis("frente", "tras")
 
-	# Movimento horizontal
 	if horizontal_direction != 0:
-		velocity.x = horizontal_direction * SPEED
+		velocity.x = horizontal_direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
-	# Movimento vertical
 	if vertical_direction != 0:
-		velocity.y = vertical_direction * SPEED
-	elif not Input.is_action_pressed("ui_accept"):  # Evita sobrescrever o pulo enquanto estiver no ar
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = vertical_direction * speed
+	elif not Input.is_action_pressed("ui_accept"):
+		velocity.y = move_toward(velocity.y, 0, speed)
 
 	move_and_slide()
-
-var is_paused = false
